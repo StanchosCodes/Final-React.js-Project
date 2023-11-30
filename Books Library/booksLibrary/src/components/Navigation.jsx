@@ -6,6 +6,7 @@ export default function Navigation() {
             <ul>
                 <li><Link to="/" className="current">Home</Link></li>
                 <li><Link to="/books">Books</Link></li>
+                <li><Link to="/books/create">Add Book</Link></li>
                 <li><Link to="/contacts">Contact</Link></li>
             </ul>
         </div>
