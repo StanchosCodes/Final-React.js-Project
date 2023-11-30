@@ -1,4 +1,4 @@
-export default function Content() {
+export default function Home() {
     return (
         <>
             <div id="templatemo_content">
@@ -49,9 +49,7 @@ export default function Content() {
                         <img src="images/templatemo_image_01.jpg" alt="image" />
                         <div className="product_info">
                             <p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>
-                            <h3>$55</h3>
-                            <div className="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                            <div className="detail_button"><a href="subpage.html">Detail</a></div>
+                            <div className="detail_button"><a href="subpage.html">Details</a></div>
                         </div>
                         <div className="cleaner">&nbsp;</div>
                     </div>
@@ -63,9 +61,7 @@ export default function Content() {
                         <img src="images/templatemo_image_02.jpg" alt="image" />
                         <div className="product_info">
                             <p>Aliquam a dui, ac magna quis est eleifend dictum.</p>
-                            <h3>$35</h3>
-                            <div className="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                            <div className="detail_button"><a href="subpage.html">Detail</a></div>
+                            <div className="detail_button"><a href="subpage.html">Details</a></div>
                         </div>
                         <div className="cleaner">&nbsp;</div>
                     </div>
@@ -77,9 +73,7 @@ export default function Content() {
                         <img src="images/templatemo_image_03.jpg" alt="image" />
                         <div className="product_info">
                             <p>Ut fringilla enim sed turpis. Sed justo dolor, convallis at.</p>
-                            <h3>$65</h3>
-                            <div className="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                            <div className="detail_button"><a href="subpage.html">Detail</a></div>
+                            <div className="detail_button"><a href="subpage.html">Details</a></div>
                         </div>
                         <div className="cleaner">&nbsp;</div>
                     </div>
@@ -91,9 +85,7 @@ export default function Content() {
                         <img src="images/templatemo_image_04.jpg" alt="image" />
                         <div className="product_info">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <h3>$45</h3>
-                            <div className="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                            <div className="detail_button"><a href="subpage.html">Detail</a></div>
+                            <div className="detail_button"><a href="subpage.html">Details</a></div>
                         </div>
                         <div className="cleaner">&nbsp;</div>
                     </div>

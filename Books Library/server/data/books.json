@@ -1,0 +1,18 @@
+{
+    "3564027f-adcd-4425-b2c0-1253d2386c0c": {
+        "title": "Test book",
+        "category": "Fantasy",
+        "rate": "6",
+        "imageUrl": "https://marketplace.canva.com/EAFaQMYuZbo/1/0/501w/canva-brown-rusty-mystery-novel-book-cover-db-_00gXZSY.jpg",
+        "description": "Fantasy game",
+        "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
+    },
+    "c64db398-91cd-487c-b900-86058c0422f8": {
+        "title": "Action book",
+        "category": "Action",
+        "rate": "10",
+        "imageUrl": "https://content.wepik.com/statics/90897927/preview-page0.jpg",
+        "description": "Summary here",
+        "_id": "c64db398-91cd-487c-b900-86058c0422f8"
+    }
+}
