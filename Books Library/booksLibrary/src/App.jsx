@@ -8,6 +8,8 @@ import Footer from './components/Footer'
 import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import BookCreate from './components/BookCreate'
+import Login from './components/Login'
+import Register from './components/Register'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path='/books' element={<Books />} />
           <Route path='/books/create' element={<BookCreate />} />
           <Route path='/contacts' element={<Contacts />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
         
         <Footer />
