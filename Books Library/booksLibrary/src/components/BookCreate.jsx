@@ -1,7 +1,35 @@
+import * as bookService from '../services/bookService'
+import { useNavigate } from 'react-router-dom';
+
 export default function BookCreate() {
+    const navigate = useNavigate();
+
+    const createBookSubmitHandler = async (e) => {
+        e.preventDefault();
+
+        // const {
+        //     title,
+        //     category,
+        //     rate,
+        //     imageUrl,
+        //     description
+        // } = Object.fromEntries(new FormData(e.currentTarget));
+
+        const bookData = Object.fromEntries(new FormData(e.currentTarget));
+
+        try {
+            await bookService.create(bookData);
+
+            navigate('/books');
+        } catch (error) {
+            // show error in ui toastr sweetalert kind of
+            console.log(error);
+        }
+    }
+
     return (
         <section>
-            <form>
+            <form id="create" onSubmit={createBookSubmitHandler}>
                 <div className="templatemo_container create_login_register_container">
                     <h1>Add Book</h1>
 

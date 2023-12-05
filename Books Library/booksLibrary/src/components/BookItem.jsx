@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function BookItem({
-    _id, title, imageUrl, description
-}) {
+export default function BookItem({ _id, title, imageUrl, description }) {
     return (
         <>
             <div className="templatemo_product_box">

@@ -15,7 +15,7 @@ export default function Books() {
 
     return (
         <>  
-            <h1>All Books Here</h1>
+            <h1>{books.length === 0 ? ("No books yet! Come back later.") : ("All Books")}</h1>
 
             {books.map(book => (
                 <BookItem key={book._id} {...book} />

@@ -10,6 +10,7 @@ import Navigation from './components/Navigation'
 import BookCreate from './components/BookCreate'
 import Login from './components/Login'
 import Register from './components/Register'
+import BookDetails from './components/BookDetails'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/books' element={<Books />} />
           <Route path='/books/create' element={<BookCreate />} />
+          <Route path='/books/details/:bookId' element={<BookDetails />} />
           <Route path='/contacts' element={<Contacts />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
