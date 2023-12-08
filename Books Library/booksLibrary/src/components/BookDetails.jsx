@@ -1,10 +1,12 @@
-import {useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import * as bookService from '../services/bookService';
 import * as commentService from '../services/commentService';
 import { Link } from 'react-router-dom';
+import AuthContext from '../contexts/authContext';
 
 export default function BookDetails({ title, imageUrl, category, rate, description }) {
+    const { email } = useContext(AuthContext);
     const [book, setBook] = useState({});
     const [comments, setComments] = useState([]);
     const { bookId } = useParams();
@@ -26,12 +28,11 @@ export default function BookDetails({ title, imageUrl, category, rate, descripti
     const addcommentHandler = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const username = formData.get('username');
         const comment = formData.get('comment');
 
-        const newComment = await commentService.create(bookId, username, comment);
+        const newComment = await commentService.create(bookId, comment);
 
-        setComments(state => [...comments, newComment]);
+        setComments(state => [...state, {...newComment, owner: { email }}]);
     }
 
     return (
@@ -51,7 +52,6 @@ export default function BookDetails({ title, imageUrl, category, rate, descripti
             <article className="create_login_register_container">
                 <label>Add new comment:</label>
                 <form className="form" onSubmit={addcommentHandler}>
-                    <input type="text" name="username" placeholder="Username......" />
                     <textarea name="comment" placeholder="Comment......" />
                     <input className="btn submit" type="submit" value="Add Comment" />
                 </form>
@@ -60,9 +60,9 @@ export default function BookDetails({ title, imageUrl, category, rate, descripti
             <div className="comments">
                 <h2>Comments:</h2>
                 <ul>
-                    {comments.map(({_id, username, content}) => (
+                    {comments.map(({_id, content, owner: { email }}) => (
                         <li key={_id} className="comment">
-                            <p>{username} - {content}</p>
+                            <p>{email} - {content}</p>
                         </li>
                     ))}
                 </ul>
