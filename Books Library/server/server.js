@@ -1333,12 +1333,44 @@
     			email: "admin@abv.bg",
     			username: "Admin",
     			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
+    		},
+            "60f0cf0b-34b0-4abd-9769-8c42f830dddg": {
+    			email: "Test@abv.bg",
+    			username: "Test",
+    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+    		},
+            "60f0cf0b-34b0-4abd-9769-8c42f830dtth": {
+    			email: "Test2@abv.bg",
+    			username: "Test2",
+    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
     		}
     	},
     	sessions: {
     	}
     };
     var seedData = {
+        books: {
+            "3564027f-adcd-4425-b2c0-1253d2386c0c": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dtth",
+                title: "The Light Beyond",
+                category: "Action",
+                rate: "1",
+                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp5JFbWH49-qnsoeGqnBryXUrfRbbOHRAs5A&usqp=CAU",
+                description: "The Light Beyond the Garden Wall.",
+                _createdOn: 1702036288129,
+                _id: "b0341f84-bb12-4a38-bfd3-99b22c91e07f"
+            },
+            "c64db398-91cd-487c-b900-86058c0422f8": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dddg",
+                title: "Harry Potter and Sorcerer's Stone",
+                category: "Fantasy",
+                rate: "10",
+                imageUrl: "https://i.pinimg.com/736x/cb/58/3b/cb583bce3452584a33cbed1c6406a2fa.jpg",
+                description: "The best book of the best sequence!",
+                _createdOn: 1702036928344,
+                _id: "0d339b5d-1afa-4dcf-a55e-5657ecd9d019"
+            }
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1399,7 +1431,28 @@
     			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
     			_createdOn: 1614260681375,
     			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
+    		},
+            "0a272c58-b7ea-4e09-a000-7ec988248f67": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dddg",
+                bookId: "3564027f-adcd-4425-b2c0-1253d2386c0c",
+                content: "Nice!",
+                _createdOn: 1702038340784,
+                _id: "0a272c58-b7ea-4e09-a000-7ec988248f67"
+            },
+            "0a272c58-b7ea-4e09-a000-7ec988248f68": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dtth",
+                bookId: "c64db398-91cd-487c-b900-86058c0422f8",
+                content: "Excellent book!",
+                _createdOn: 1702038346297,
+                _id: "0a272c58-b7ea-4e09-a000-7ec988248f68"
+            },
+            "0a272c58-b7ea-4e09-a000-7ec988248f69": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dddg",
+                bookId: "c64db398-91cd-487c-b900-86058c0422f8",
+                content: "This is my favorite book!",
+                _createdOn: 1702040669957,
+                _id: "0a272c58-b7ea-4e09-a000-7ec988248f69"
+            }
     	},
     	records: {
     		i01: {

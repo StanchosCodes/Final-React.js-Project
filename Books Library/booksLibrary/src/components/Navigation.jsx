@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import AuthContext from '../contexts/authContext'
 
 export default function Navigation() {
-    const { isAuthenticated, username } = useContext(AuthContext);
+    const { isAuthenticated, email } = useContext(AuthContext);
 
     return (
         <div id="templatemo_menu">
@@ -15,7 +15,7 @@ export default function Navigation() {
                         <li><Link to="/books/create">Add Book</Link></li>
                         <li><Link to="/contacts">Contact</Link></li>
                         <li><Link to="/logout">Logout</Link></li>
-                        <span><strong>Hi {username.substring(0, username.indexOf('@'))}!</strong></span>
+                        <span><strong>Hi {email.substring(0, email.indexOf('@'))}!</strong></span>
                     </div>
                 )}
                 
