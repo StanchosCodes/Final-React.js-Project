@@ -1,4 +1,17 @@
+import { useEffect, useState } from 'react';
+import * as bookService from '../services/bookService';
+import RecentBook from './RecentBook';
+
 export default function Home() {
+    const [recentBooks, setRecentBooks] = useState([]);
+
+    useEffect(() => {
+        bookService.getRecent()
+            .then(result => {
+                setRecentBooks(result);
+            }, []);
+    });
+
     return (
         <>
             <div id="templatemo_content">
@@ -44,53 +57,9 @@ export default function Home() {
                 </div>
                 
                 <div id="templatemo_content_right">
-                    <div className="templatemo_product_box">
-                        <h1>Photography  <span>(by Best Author)</span></h1>
-                        <img src="images/templatemo_image_01.jpg" alt="image" />
-                        <div className="product_info">
-                            <p>Etiam luctus. Quisque facilisis suscipit elit. Curabitur...</p>
-                            <div className="detail_button"><a href="subpage.html">Details</a></div>
-                        </div>
-                        <div className="cleaner">&nbsp;</div>
-                    </div>
-                    
-                    <div className="cleaner_with_width">&nbsp;</div>
-                    
-                    <div className="templatemo_product_box">
-                        <h1>Cooking  <span>(by New Author)</span></h1>
-                        <img src="images/templatemo_image_02.jpg" alt="image" />
-                        <div className="product_info">
-                            <p>Aliquam a dui, ac magna quis est eleifend dictum.</p>
-                            <div className="detail_button"><a href="subpage.html">Details</a></div>
-                        </div>
-                        <div className="cleaner">&nbsp;</div>
-                    </div>
-                    
-                    <div className="cleaner_with_height">&nbsp;</div>
-                    
-                    <div className="templatemo_product_box">
-                        <h1>Gardening <span>(by Famous Author)</span></h1>
-                        <img src="images/templatemo_image_03.jpg" alt="image" />
-                        <div className="product_info">
-                            <p>Ut fringilla enim sed turpis. Sed justo dolor, convallis at.</p>
-                            <div className="detail_button"><a href="subpage.html">Details</a></div>
-                        </div>
-                        <div className="cleaner">&nbsp;</div>
-                    </div>
-                    
-                    <div className="cleaner_with_width">&nbsp;</div>
-                    
-                    <div className="templatemo_product_box">
-                        <h1>Sushi Book  <span>(by Japanese Name)</span></h1>
-                        <img src="images/templatemo_image_04.jpg" alt="image" />
-                        <div className="product_info">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <div className="detail_button"><a href="subpage.html">Details</a></div>
-                        </div>
-                        <div className="cleaner">&nbsp;</div>
-                    </div>
-                    
-                    <div className="cleaner_with_height">&nbsp;</div>
+                    {recentBooks.map(book => <RecentBook {...book} />)}
+
+                    {!recentBooks.length && <h1>No books yet! Come back later!</h1>}
                     
                     <a href="subpage.html"><img src="images/templatemo_ads.jpg" alt="ads" /></a>
                 </div>

@@ -1,12 +1,13 @@
 import {useContext, useEffect, useState} from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import * as bookService from '../services/bookService';
 import * as commentService from '../services/commentService';
 import { Link } from 'react-router-dom';
 import AuthContext from '../contexts/authContext';
 
 export default function BookDetails({ title, imageUrl, category, rate, description }) {
-    const { email } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const { email, userId } = useContext(AuthContext);
     const [book, setBook] = useState({});
     const [comments, setComments] = useState([]);
     const { bookId } = useParams();
@@ -35,6 +36,18 @@ export default function BookDetails({ title, imageUrl, category, rate, descripti
         setComments(state => [...state, {...newComment, owner: { email }}]);
     }
 
+    const isCreator = userId === book._ownerId;
+
+    const deleteClickHandler = async (e) => {
+        const isConfirmed = confirm(`You are going to delete ${book.title}!`);
+
+        if (isConfirmed) {
+            await bookService.remove(bookId);
+
+            navigate('/books');
+        }
+    }
+
     return (
         <>
             <div className="templatemo_product_box">
@@ -44,7 +57,15 @@ export default function BookDetails({ title, imageUrl, category, rate, descripti
                     <p>Category: {book.category}</p>
                     <p>Rating: {book.rate}</p>
                     <p>{book.description}</p>
-                    <div className="detail_button"><Link to={`/books`}>Back</Link></div>
+                    <div className="detail_button">
+                        <Link to={`/books`}>Back</Link>
+                        {isCreator && (
+                            <>
+                                <Link to={`/books/edit/${book._id}`}>Edit</Link>
+                                <Link onClick={deleteClickHandler}>Delete</Link>
+                            </>
+                        )}
+                    </div>
                 </div>
                 <div className="cleaner">&nbsp;</div>
             </div>

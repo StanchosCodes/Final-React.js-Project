@@ -13,6 +13,9 @@ import BookDetails from './components/BookDetails'
 import { AuthProvider } from './contexts/authContext'
 import Path from './paths'
 import Logout from "./components/Logout";
+import BookEdit from "./components/BookEdit"
+import GuestAuthGuard from './components/guards/GuestAuthGuard'
+import AuthGuard from './components/guards/AuthGuard'
 
 function App() {
     return (
@@ -23,13 +26,14 @@ function App() {
 
                 <Routes>
                     <Route path={Path.Home} element={<Home />} />
-                    <Route path='/books' element={<Books />} />
-                    <Route path='/books/create' element={<BookCreate />} />
-                    <Route path='/books/details/:bookId' element={<BookDetails />} />
-                    <Route path='/contacts' element={<Contacts />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/register' element={<Register />} />
-                    <Route path='/logout' element={<Logout />} />
+                    <Route path='/books' element={<GuestAuthGuard> <Books /> </GuestAuthGuard>} />
+                    <Route path='/books/create' element={<GuestAuthGuard> <BookCreate /> </GuestAuthGuard>} />
+                    <Route path='/books/details/:bookId' element={<GuestAuthGuard> <BookDetails /> </GuestAuthGuard>} />
+                    <Route path='/books/edit/:bookId' element={<GuestAuthGuard> <BookEdit /> </GuestAuthGuard>} />
+                    <Route path='/contacts' element={<GuestAuthGuard> <Contacts /> </GuestAuthGuard>} />
+                    <Route path='/login' element={<AuthGuard> <Login /> </AuthGuard>} />
+                    <Route path='/register' element={<AuthGuard> <Register /> </AuthGuard>} />
+                    <Route path='/logout' element={<GuestAuthGuard> <Logout /> </GuestAuthGuard>} />
                 </Routes>
 
                 <Footer />
