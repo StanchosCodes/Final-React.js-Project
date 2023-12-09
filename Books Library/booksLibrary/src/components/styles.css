@@ -6,6 +6,8 @@ CSS Credit: http://www.templatemo.com/
 Book Store Template 
 http://www.templatemo.com/preview/templatemo_086_book_store 
 */
+
+/* + Custom css for the specific needs i had during the development of the project */
 body {
 	margin: 0;
 	padding: 0;
@@ -90,8 +92,9 @@ img {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	/* text-align: center;
-	align-content: center; */
+	text-align: center;
+	align-content: center;
+	margin-top: 8em;
 }
 
 .create_login_register_container
@@ -116,6 +119,25 @@ img {
 	border-radius: 5px;
 }
 
+.create_login_register_container .btn {
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+	background-color: #466565;
+	color: #ecf0f3;
+	border: 3px solid #969547;
+	border-radius: 5px;
+}
+
+.create_login_register_container form {
+	align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#login-form, #register-form, #create, #edit {
+	margin-bottom: 8em;
+}
 
 /* menu */
 
@@ -167,11 +189,13 @@ img {
 }
 
 #templatemo_header #templatemo_special_offers {
-	float: left;
-	font-size: 14px;	
+	float: left;	
 	margin-top: 95px;
 	margin-left: 490px;
 	width: 180px;
+	display: flex;
+    flex-direction: column;
+    line-height: 12px;
 }
 
 #templatemo_special_offers a {
@@ -182,7 +206,8 @@ img {
 	margin: 0 0 20px 0;
 }
 #templatemo_special_offers p span {
-	font-size: 18px;
+	font-size: 10px;
+	font-weight: bold;
 }
 
 #templatemo_header #templatemo_new_books {
@@ -190,6 +215,12 @@ img {
 	margin-top: 90px;	
 	margin-left: 55px;
 	width: 180px;
+	font-size: 10px;
+	font-weight: bold;
+	display: flex;
+    flex-direction: column;
+    line-height: normal;
+    gap: 1em;
 }
 
 #templatemo_new_books ul {
@@ -211,6 +242,10 @@ img {
 	clear: both;
 	width: 920px;
 	padding: 0 20px;
+	text-align: center;
+	gap: 2em;
+    display: flex;
+    flex-direction: column;
 }
 
 #templatemo_content #templatemo_content_left {
@@ -222,8 +257,9 @@ img {
 }
 
 #templatemo_content #templatemo_content_right {
-	float: right;
-	width: 670px;
+	width: 800px;
+	margin-left: 10.3em;
+    margin-right: auto;
 }
 
 
@@ -262,16 +298,14 @@ img {
 	color: #fcf88e;
 }
 
-
-
-
-
 #templatemo_content_right .templatemo_product_box {
 	float: left;
 	width: 303px;
-	height: 210px;
+	height: 230px;
 	padding: 10px;
 	border: 1px solid #333;
+	margin-bottom: 2em;
+	margin-right: 2em;
 }
 
 #templatemo_content_right h1 {
@@ -306,9 +340,17 @@ img {
 	padding: 0 0 3px 0;
 }
 
-#templatemo_content_right .image_panel {
+.home_image_panel {
 	float: left;
 	width: 100px;
+	height: 150px;
+	margin-right: 20px;
+}
+
+.image_panel {
+	float: left;
+	width: 300px;
+	height: 400px;
 	margin-right: 20px;
 }
 
@@ -321,18 +363,89 @@ img {
 	font-weight: normal;
 }
 
+.templatemo_product_box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    justify-content: space-evenly;
+	margin-top: 4em;
+}
+
 .templatemo_product_box img {
 	float: left;
 	margin-right: 20px;
 }
 
+.details_img {
+	float: left;
+	margin-right: 20px;
+	width: 200px;
+    height: 300px
+}
+
 .templatemo_product_box .product_info {
 	float: left;
 	width: 180px;
+	display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.templatemo_product_box .details_product_info {
+	float: left;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: normal;
+}
+
+.details_product_info p {
+	margin-bottom: 15px;
+}
+
+.details_product_info h1 {
+	color: cadetblue;
 }
 
 .product_info p {
 	margin-bottom: 15px;
+}
+
+.product_info h2 {
+	color: cadetblue;
+}
+
+.comments {
+	margin-left: 5em;
+}
+
+.comments h2{
+	margin-left: 4.5em;
+	color: darkgray;
+}
+
+.comments ul{
+	list-style: decimal;
+	color: lightskyblue
+}
+
+.contacts_message {
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 1em;
+	color:greenyellow;
+	border: 2px solid grey;
+	border-radius: 20px;
+	padding: 2em;
+	margin: 1em;
+}
+
+.advertise {
+	margin-right: 10em;
 }
 
 /* end of content */

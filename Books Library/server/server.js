@@ -1354,21 +1354,41 @@
                 _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dtth",
                 title: "The Light Beyond",
                 category: "Action",
-                rate: "1",
+                rate: 1,
                 imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp5JFbWH49-qnsoeGqnBryXUrfRbbOHRAs5A&usqp=CAU",
                 description: "The Light Beyond the Garden Wall.",
                 _createdOn: 1702036288129,
-                _id: "b0341f84-bb12-4a38-bfd3-99b22c91e07f"
+                _id: "3564027f-adcd-4425-b2c0-1253d2386c0c"
             },
             "c64db398-91cd-487c-b900-86058c0422f8": {
                 _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dddg",
                 title: "Harry Potter and Sorcerer's Stone",
                 category: "Fantasy",
-                rate: "10",
+                rate: 10,
                 imageUrl: "https://i.pinimg.com/736x/cb/58/3b/cb583bce3452584a33cbed1c6406a2fa.jpg",
                 description: "The best book of the best sequence!",
                 _createdOn: 1702036928344,
-                _id: "0d339b5d-1afa-4dcf-a55e-5657ecd9d019"
+                _id: "c64db398-91cd-487c-b900-86058c0422f8"
+            },
+            "c64db398-91cd-487c-b900-86058c0422d9": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dtth",
+                title: "Spring Book",
+                category: "Nature",
+                rate: 1,
+                imageUrl: "https://content.wepik.com/statics/90897927/preview-page0.jpg",
+                description: "A book about the spring.",
+                _createdOn: 1702065660960,
+                _id: "c64db398-91cd-487c-b900-86058c0422d9"
+            },
+            "1bfa78f8-2e37-496e-8814-5186717c8ba0": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dtth",
+                title: "The Martian",
+                category: "Fantasy",
+                rate: 4,
+                imageUrl: "https://i.pinimg.com/736x/35/66/dc/3566dc24c327c144d18dffbac7145d28.jpg",
+                description: "A book for the outer world.",
+                _createdOn: 1702065669978,
+                _id: "1bfa78f8-2e37-496e-8814-5186717c8ba0"
             }
         },
     	recipes: {

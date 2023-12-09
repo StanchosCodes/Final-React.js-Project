@@ -1,5 +1,7 @@
-import * as bookService from '../services/bookService'
 import { useNavigate } from 'react-router-dom';
+
+import Path from '../paths';
+import * as bookService from '../services/bookService'
 
 export default function BookCreate() {
     const navigate = useNavigate();
@@ -7,22 +9,13 @@ export default function BookCreate() {
     const createBookSubmitHandler = async (e) => {
         e.preventDefault();
 
-        // const {
-        //     title,
-        //     category,
-        //     rate,
-        //     imageUrl,
-        //     description
-        // } = Object.fromEntries(new FormData(e.currentTarget));
-
         const bookData = Object.fromEntries(new FormData(e.currentTarget));
 
         try {
             await bookService.create(bookData);
 
-            navigate('/books');
+            navigate(Path.Books);
         } catch (error) {
-            // show error in ui toastr sweetalert kind of
             console.log(error);
         }
     }

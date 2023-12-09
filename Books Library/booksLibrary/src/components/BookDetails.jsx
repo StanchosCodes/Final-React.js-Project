@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
 import {useContext, useEffect, useState} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+
+import Path from '../paths';
+import AuthContext from '../contexts/authContext';
 import * as bookService from '../services/bookService';
 import * as commentService from '../services/commentService';
-import { Link } from 'react-router-dom';
-import AuthContext from '../contexts/authContext';
 
 export default function BookDetails({ title, imageUrl, category, rate, description }) {
     const navigate = useNavigate();
@@ -44,21 +46,21 @@ export default function BookDetails({ title, imageUrl, category, rate, descripti
         if (isConfirmed) {
             await bookService.remove(bookId);
 
-            navigate('/books');
+            navigate(Path.Books);
         }
     }
 
     return (
         <>
             <div className="templatemo_product_box">
-                <h1>{book.title}</h1>
-                <img src={book.imageUrl} alt={book.title} />
-                <div className="product_info">
+                <img className='details_img' src={book.imageUrl} alt={book.title} />
+                <div className="details_product_info">
+                    <h1>{book.title}</h1>
                     <p>Category: {book.category}</p>
                     <p>Rating: {book.rate}</p>
                     <p>{book.description}</p>
                     <div className="detail_button">
-                        <Link to={`/books`}>Back</Link>
+                        <Link to={Path.Books}>Back</Link>
                         {isCreator && (
                             <>
                                 <Link to={`/books/edit/${book._id}`}>Edit</Link>

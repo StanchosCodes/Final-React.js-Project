@@ -15,16 +15,20 @@ export const getOne = async (bookId) => {
 };
 
 export const getRecent = async () => {
-    const query = new URLSearchParams({
-        //sortBy: '_createdOn desc',
-        offset: 0,
-        pageSize: 4
-    });
+    const sortQuery = 'sortBy=_createdOn%20desc&offset=0&pageSize=4';
 
-    const result = await request.get(`${baseUrl}?${query}`);
+    const result = await request.get(`${baseUrl}?${sortQuery}`);
 
     return result;
 };
+
+export const getTopRated = async () => {
+    const sortQuery = 'sortBy=rate%20desc&offset=0&pageSize=3';
+
+    const result = await request.get(`${baseUrl}?${sortQuery}`);
+
+    return result;
+}
 
 export const create = async (bookData) => {
     const result = await request.post(baseUrl, bookData);

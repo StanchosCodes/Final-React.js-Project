@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+
 import * as bookService from '../services/bookService';
+
 import BookItem from './BookItem';
 
 export default function Books() {
@@ -14,12 +16,14 @@ export default function Books() {
     }, []);
 
     return (
-        <>  
-            <h1>{books.length === 0 ? ("No books yet! Come back later.") : ("All Books")}</h1>
+        <>
+            <div id='templatemo_content'>
+                <h1>{books.length === 0 ? ("No books yet! Come back later.") : ("All Books")}</h1>
 
-            {books.map(book => (
-                <BookItem key={book._id} {...book} />
-            ))}
+                {books.map(book => (
+                    <BookItem key={book._id} {...book} />
+                ))}
+            </div>
         </>
     )
 }

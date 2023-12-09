@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import * as bookService from '../services/bookService'
 import { useNavigate, useParams } from 'react-router-dom';
+
+import Path from '../paths';
+import * as bookService from '../services/bookService'
 
 export default function BookEdit() {
     const navigate = useNavigate();
@@ -31,9 +33,8 @@ export default function BookEdit() {
         try {
             await bookService.edit(bookId, formData);
 
-            navigate('/books');
+            navigate(Path.Books);
         } catch (error) {
-            // show error in ui toastr sweetalert kind of
             console.log(error);
         }
     }
