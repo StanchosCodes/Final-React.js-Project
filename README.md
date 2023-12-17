@@ -9,12 +9,12 @@ The app have to ways to be used. The first is like a guest without login, where 
 The html template is taken from http://www.templatemo.com/preview/templatemo_086_book_store and it is managed by react. In audition to be complete i added some more pages and css styles.
 
 # 📋 Used technologies
-React.js
-HTML5
-CSS3
-Vite
-JavaScript
-Softuni Practice Server
++ React.js
++ HTML5
++ CSS3
++ Vite
++ JavaScript
++ Softuni Practice Server
 
 # 💼 Database
 For the use of database all students were given the Softuni Practice Server which is written in JavaScript and provides end-points so we can make requests and retrieve and save data from and to the server.
